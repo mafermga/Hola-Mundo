@@ -1,0 +1,46 @@
+@startuml pow 
+
+class Dumpling 
+class Mascota
+Class Vida 
+
+Class Comida 
+Class Manzana 
+Class Gusano
+Class Pasto 
+
+class Baño 
+
+class Cuarto 
+class Corazon
+Class Tina 
+Class Papel
+Class Cama 
+Class Dinero
+Class Retrete 
+
+
+Corazon --* Dumpling 
+Mascota --* Vida 
+Dumpling o-- Cuarto 
+Cama --* Cuarto
+Dumpling --|> Mascota 
+Dumpling o-- Tina  
+Tina --* Baño 
+Papel --* Baño
+Dumpling o-- Papel
+Dumpling o-- Dinero 
+Dumpling o-- Retrete 
+Retrete --* Baño 
+Dumpling o-- Comida 
+Manzana --|> Comida 
+Gusano --|> Comida 
+Pasto --|> Comida 
+
+
+
+
+
+
+
+@enduml 
