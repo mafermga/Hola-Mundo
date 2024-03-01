@@ -8,7 +8,7 @@ class Mascota {
     Mascota(){
         this->vida=0;
     }
-    Mascota(){}
+    
     void Comer(Alimento alimento){
         this->vida+= alimento.ExtraerEnergia();
     }

@@ -6,7 +6,6 @@ class Alimento {
     Alimento(int energia){
         this->energia=energia;
     }
-    Alimento (){}
     int ExtraerEnergia(){
         return energia; 
     }
