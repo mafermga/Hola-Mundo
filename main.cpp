@@ -1,6 +1,10 @@
 #include <iostream>
 #include <Alimento.hpp>
-#include<Mascota.hpp>
+#include <Mascota.hpp>
+#include <Dibujo.hpp>
+#include<Animacion.hpp>
+#include<list>
+
 using namespace std;
 
 int main(int argc, char const *argv[])
@@ -14,10 +18,21 @@ int main(int argc, char const *argv[])
     firulais.Jugar();
     firulais.Jugar();
 
-cout
-<<"Vida de firulais"
-<<firulais.LeerVida()
-<<endl;
+    cout
+        << "Vida de firulais"
+        << firulais.LeerVida()
+        << endl;
     
-return 0;
+    Dibujo dibujo("./assets/conejo.txt");
+    Dibujo dibujo2("./assets/carro.txt");
+
+    list<Dibujo> dibujos;
+    dibujos.push_back(dibujo);
+    dibujos.push_back(dibujo2);
+
+    Animacion animacion (dibujos);
+    animacion.Reproducir();
+    
+
+    return 0;
 };

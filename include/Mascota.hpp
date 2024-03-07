@@ -1,21 +1,27 @@
-#pragma once 
-#include<Alimento.hpp>
+#pragma once
+#include <Alimento.hpp>
 
-class Mascota {
-    private: 
-    int vida; 
-    public: 
-    Mascota(){
-        this->vida=0;
+class Mascota
+{
+private:
+    int vida;
+
+public:
+    Mascota()
+    {
+        this->vida = 0;
     }
-    
-    void Comer(Alimento alimento){
-        this->vida+= alimento.ExtraerEnergia();
+
+    void Comer(Alimento alimento)
+    {
+        this->vida += alimento.ExtraerEnergia();
     }
-    void Jugar(){
-        this->vida -=2;
+    void Jugar()
+    {
+        this->vida -= 2;
     }
-    int LeerVida(){
+    int LeerVida()
+    {
         return this->vida;
     }
 };
