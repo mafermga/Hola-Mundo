@@ -1,16 +1,30 @@
 #include <iostream>
 using namespace std;
 
-class personaje 
+class Personaje 
 {
 private: 
     
 public:
-    
-}
+    Personaje() {}
+    ~Personaje() {}
+    void Hablar (){
+        cout<<"Hola enano"<<endl;
+    }
+};
+
+class Duende : public Personaje 
+{
+private:
+    int salud;
+public:
+    Duende  (){}
+    ~Duende (){}
+};
 
 
-class Enano 
+
+class Enano : public Personaje
 {
 private:
 int vida;
@@ -19,14 +33,15 @@ int edad;
    
 public:
     Enano(){}
+    ~Enano(){}
 void inicializar(){
     this->altura =2;
     this->edad = 150;
     this-> vida = 10;
 }
-    void comer(){
-
-    }
+    void Comer(){
+    this->vida +=1;
+}
 };
 
 
@@ -63,19 +78,53 @@ int main(int argc, char const *argv[])
     cout<<endl;
     cout<<"Memoria dinamica en c : "<<endl; 
     cout<<"Direccion de : "<<malloc(2)<<endl;
-
     cout<<"Direccion dinamica int: "<<malloc(sizeof(int))<<endl;
     //void* direccion = malloc(sizeof(int));
 
-    //Casteo de punteros en c 
-    Enano* direccion=(Enano*)malloc(sizeof(Enano));
+    // Casteo de punteros en c
+    Enano *direccion = (Enano *)malloc(sizeof(Enano));
     direccion->inicializar();
 
-    //punteros en c 
-    Enano* instancia = new Enano;
- //operador 
- instancia ->comer();
+    // punteros en c
+    Enano *instancia = new Enano();
+    // operador
+    instancia->Comer();
+    instancia->Hablar();
+
+    // polimorfismo
+    Personaje *p = new Duende();
+    Personaje *q = new Enano();
+
+    p->Hablar();
+    q->Hablar();
+
+    cout << "Direccion p : " << p << endl;
+
+    // Arreglos
+    Duende duendes[10];
+
+    cout << endl;
+    cout << &duendes[0] << endl;
+    cout << &duendes[1] << endl;
+    cout << &duendes[2] << endl;
+    cout << &duendes[3] << endl;
+    cout << &duendes[4] << endl;
+
+    // Conversiona direccion
+    cout << endl;
+    cout << &duendes[0] + 0 << endl;
+    cout << &duendes[0] + 1 << endl;
+    cout << &duendes[0] + 2 << endl;
+    cout << &duendes[0] + 3 << endl;
+    cout << &duendes[0] + 4 << endl;
+
+    // conversiona direccion
+    cout << endl;
+    cout << duendes + 0 << endl;
+    cout << duendes + 1 << endl;
+    cout << duendes + 2 << endl;
+    cout << duendes + 3 << endl;
+    cout << duendes + 4 << endl;
 
     return 0;
 };
-
